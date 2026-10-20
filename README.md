@@ -1,3 +1,4 @@
+### Description
 This automated computational workflow was designed to process Metagenome-Assembled Genomes (MAGs) and isolate genomes, performing rigorous quality control, pangenome characterization, phylogenetic analysis, and the prediction of Biosynthetic Gene Clusters (BGCs).
 
 The pipeline is structured into six main stages:
@@ -9,12 +10,11 @@ The pipeline is structured into six main stages:
 6. Biosynthetic Gene Cluster (BGC) Detection and Prediction: To comprehensively mine the genomes for antimicrobial and secondary metabolite potential, the workflow implements a multi-tool approach:
    * antiSMASH and DeepBGC are executed directly on the filtered genomic dataset to search and classify BGCs using rule-based and deep-learning methodologies.
    * BGC-Prophet is utilized for additional BGC prediction, taking the annotated protein sequences (.faa files) as input. This branch includes an automated parsing step to rename files (e.g., to hypotheticals.faa) depending on whether Prokka or Bakta was used upstream, ensuring seamless execution.
-
 ---
 
+### Overview
 ![Pipeline overview](./img/nextflow_workflow.png)
 
 ---
-
 ### Usage
 nextflow run main.nf -params-file my_params.yml -profile standard,conda
